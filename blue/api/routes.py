@@ -19,7 +19,7 @@ api = Api(mod)
 
 ###importing the functions from other files ###
 # print(f"HEY {os.getcwd()}")
-# from blue.api.functions import pose_detection
+from functions import pose_detection
 
 class intro_to_API(Resource):
     def post(self):
