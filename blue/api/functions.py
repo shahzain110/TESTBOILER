@@ -3,4 +3,3 @@ def basic_function():
         print("Hello from server")
     except:
         print("Unable to print")
-
