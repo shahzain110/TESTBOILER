@@ -20,7 +20,7 @@ api = Api(mod)
 
 
 ###importing the functions from other files ###
-
+from functions import detection
 
 class intro_to_API(Resource):
     def post(self):
@@ -33,7 +33,7 @@ class intro_to_API(Resource):
             f = open(video_01_path, 'wb')
             f.write(video_01)
             f.close()
-            #
+
             video_02 = request.files['vid2'].read()
             # print("Type: ------------------->", type(video_02))
             video_02_path = '/home/shahzain/Documents/GitHub/PoseEst_dep/PoseEst/resouces/2.mp4'
@@ -41,7 +41,7 @@ class intro_to_API(Resource):
             sources.append(video_02_path)
             f.write(video_02)
             f.close()
-            # match_perc = basic_function(sources)
+            match_perc = detection(sources)
             dic = {"status": 200, "msg": "match_perc"}
         except Exception as e:
             dic = {"status": 444, "msg": "faliure"}
