@@ -19,8 +19,8 @@ api = Api(mod)
 
 
 ###importing the functions from other files ###
-
-# from functions import detection
+print(f"HEY {os.getcwd()}")
+from blue.api.functions import detection
 
 class intro_to_API(Resource):
     def post(self):
