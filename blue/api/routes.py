@@ -1,6 +1,5 @@
 import os
 import sys
-
 from flask import Blueprint, jsonify, request
 from flask_restful import Api, Resource
 
@@ -20,7 +19,8 @@ api = Api(mod)
 
 
 ###importing the functions from other files ###
-# from functions import detection
+
+from functions import detection
 
 class intro_to_API(Resource):
     def post(self):
@@ -41,7 +41,7 @@ class intro_to_API(Resource):
             sources.append(video_02_path)
             f.write(video_02)
             f.close()
-            match_perc = (sources)
+            match_perc = detection(sources)
             dic = {"status": 200, "msg": "match_perc"}
         except Exception as e:
             dic = {"status": 444, "msg": "faliure"}
