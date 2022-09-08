@@ -20,7 +20,7 @@ api = Api(mod)
 
 ###importing the functions from other files ###
 print(f"HEY {os.getcwd()}")
-from blue.api.functions import detection
+from blue.api.functions import pose_detection
 
 class intro_to_API(Resource):
     def post(self):
@@ -41,7 +41,7 @@ class intro_to_API(Resource):
             sources.append(video_02_path)
             f.write(video_02)
             f.close()
-            match_perc = detection(sources)
+            match_perc = pose_detection(sources)
             dic = {"status": 200, "msg": "match_perc"}
         except Exception as e:
             dic = {"status": 444, "msg": "faliure"}
