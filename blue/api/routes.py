@@ -3,7 +3,7 @@ import sys
 from flask import Blueprint, jsonify, request
 from flask_restful import Api, Resource
 ### change the "/" to "\\" if you are windows user ###
-# from api.
+
 
 dirname = os.path.dirname(os.path.abspath(__file__))
 dirname_list = dirname.split("/")[:-1]
@@ -19,7 +19,7 @@ api = Api(mod)
 
 ###importing the functions from other files ###
 # print(f"HEY {os.getcwd()}")
-from blue.api.functions import pose_detection
+# from blue.api.functions import pose_detection
 
 class intro_to_API(Resource):
     def post(self):
