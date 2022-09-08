@@ -3,3 +3,4 @@ dnspython
 flask_cors
 flask_restful
 flask_sqlalchemy
+gunicorn
