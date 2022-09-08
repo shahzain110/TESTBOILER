@@ -4,3 +4,4 @@ flask_cors
 flask_restful
 flask_sqlalchemy
 gunicorn
+opencv-python==4.6.0.66
