@@ -20,7 +20,7 @@ api = Api(mod)
 
 ###importing the functions from other files ###
 
-from functions import detection
+# from functions import detection
 
 class intro_to_API(Resource):
     def post(self):
