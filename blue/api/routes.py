@@ -24,7 +24,7 @@ api = Api(mod)
 
 ###importing the functions from other files ###
 
-from functions import basic_function
+from functions import detection
 
 
 class intro_to_API(Resource):

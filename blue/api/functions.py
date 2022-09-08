@@ -1,3 +1,6 @@
+import cv2
+
+
 def detection(sources):
     for x in range(0, len(sources)):
         frames_counter = 0
