@@ -30,7 +30,7 @@ from functions import basic_function
 class intro_to_API(Resource):
     def get(self):
         try:
-        sources = []
+            sources = []
             video_01 = request.files['vid1'].read()
             # print("Type: ------------------->", type(video_01))
             video_01_path = '/home/shahzain/Documents/GitHub/PoseEst_dep/PoseEst/resouces/1.mp4'
