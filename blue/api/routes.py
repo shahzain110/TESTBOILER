@@ -5,7 +5,7 @@ from flask import Blueprint, jsonify, request
 from flask_restful import Api, Resource
 
 ### change the "/" to "\\" if you are windows user ###
-
+from api.
 
 dirname = os.path.dirname(os.path.abspath(__file__))
 dirname_list = dirname.split("/")[:-1]
@@ -41,7 +41,7 @@ class intro_to_API(Resource):
             sources.append(video_02_path)
             f.write(video_02)
             f.close()
-            # match_perc = (sources)
+            match_perc = (sources)
             dic = {"status": 200, "msg": "match_perc"}
         except Exception as e:
             dic = {"status": 444, "msg": "faliure"}
