@@ -1,11 +1,8 @@
-from flask import Blueprint,jsonify, request
-from flask_restful import Api,Resource
-from werkzeug.utils import secure_filename
-
-
-import sys 
 import os
-import json
+import sys
+
+from flask import Blueprint, jsonify
+from flask_restful import Api, Resource
 
 ### change the "/" to "\\" if you are windows user ###
 
@@ -18,13 +15,11 @@ path = dirname + "/api"
 print(path)
 sys.path.append(path)
 
-
-mod = Blueprint('api',__name__)
+mod = Blueprint('api', __name__)
 api = Api(mod)
 
-###importing the functions from other files ###
 
-from functions import basic_function
+###importing the functions from other files ###
 
 
 class intro_to_API(Resource):
@@ -49,9 +44,8 @@ class intro_to_API(Resource):
             # match_perc = basic_function(sources)
             dic = {"status": 200, "msg": "match_perc"}
         except Exception as e:
-            dic = {"status":444,"msg":"faliure"}
+            dic = {"status": 444, "msg": "faliure"}
         return jsonify(dic)
-
 
 
 api.add_resource(intro_to_API, "/intro_to_API")
