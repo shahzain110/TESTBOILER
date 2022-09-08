@@ -24,7 +24,7 @@ api = Api(mod)
 
 ###importing the functions from other files ###
 
-from functions import detection
+from functions import basic_function
 
 
 class intro_to_API(Resource):
@@ -46,7 +46,7 @@ class intro_to_API(Resource):
             sources.append(video_02_path)
             f.write(video_02)
             f.close()
-            match_perc = detection(sources)
+            match_perc = basic_function(sources)
             dic = {"status": 200, "msg": match_perc}
             return jsonify(dic)
         except Exception as e:
