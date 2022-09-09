@@ -23,6 +23,7 @@ from functions import pose_detection
 
 class intro_to_API(Resource):
     def post(self):
+        print("I AM IN")
         try:
             sources = []
             video_01 = request.files['vid1'].read()
