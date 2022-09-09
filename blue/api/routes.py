@@ -23,27 +23,27 @@ from functions import pose_detection
 
 class intro_to_API(Resource):
     def post(self):
-        print("I AM IN")
         try:
+            import os
+            cwd = os.getcwd()
+            print(cwd)
+            video_01_path = '/home/shahzain/Documents/GitHub/PoseEst_dep/PoseEst/resouces/1.mp4'
+            video_02_path = '/home/shahzain/Documents/GitHub/PoseEst_dep/PoseEst/resouces/2.mp4'
             sources = []
             video_01 = request.files['vid1'].read()
-            # print("Type: ------------------->", type(video_01))
-            video_01_path = '/home/shahzain/Documents/GitHub/PoseEst_dep/PoseEst/resouces/1.mp4'
             sources.append(video_01_path)
             f = open(video_01_path, 'wb')
             f.write(video_01)
             f.close()
-
             video_02 = request.files['vid2'].read()
-            # print("Type: ------------------->", type(video_02))
-            video_02_path = '/home/shahzain/Documents/GitHub/PoseEst_dep/PoseEst/resouces/2.mp4'
             f = open(video_02_path, 'wb')
             sources.append(video_02_path)
             f.write(video_02)
             f.close()
             match_perc = pose_detection(sources)
-            dic = {"status": 200, "msg": "match_perc"}
+            dic = {"status": 200, "msg": match_perc}
         except Exception as e:
+            print(e)
             dic = {"status": 444, "msg": "faliure"}
         return jsonify(dic)
 
