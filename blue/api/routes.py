@@ -27,8 +27,8 @@ class intro_to_API(Resource):
             import os
             cwd = os.getcwd()
             print(cwd)
-            video_01_path = '/home/shahzain/Documents/GitHub/PoseEst_dep/PoseEst/resouces/1.mp4'
-            video_02_path = '/home/shahzain/Documents/GitHub/PoseEst_dep/PoseEst/resouces/2.mp4'
+            video_01_path = 'videos/1.mp4'
+            video_02_path = 'videos/2.mp4'
             sources = []
             video_01 = request.files['vid1'].read()
             sources.append(video_01_path)
